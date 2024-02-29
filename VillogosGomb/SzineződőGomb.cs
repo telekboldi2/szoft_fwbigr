@@ -10,8 +10,6 @@ namespace VillogosGomb
     {
         public SzineződőGomb()
         {
-            Width = 20;
-            Height = 20;
             MouseClick += SzineződőGomb_MouseClick;
         }
 

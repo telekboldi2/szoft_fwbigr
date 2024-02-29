@@ -16,12 +16,12 @@ namespace VillogosGomb
             {
                 for (int oszlop = 0; oszlop < 10; oszlop++)
                 {
-                    SzinezõdõGomb b = new SzinezõdõGomb();
+                    SzámolóGomb b = new SzámolóGomb();
                     b.Height = méret;
                     b.Width = méret;
                     b.Left = sor*méret;
                     b.Top = oszlop*méret;
-                    b.Text = ((sor+1)*(oszlop+1)).ToString();
+                    //b.Text = ((sor+1)*(oszlop+1)).ToString();
                     Controls.Add(b);
                 }
             }
