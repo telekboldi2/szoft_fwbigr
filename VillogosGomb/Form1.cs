@@ -16,7 +16,7 @@ namespace VillogosGomb
             {
                 for (int oszlop = 0; oszlop < 10; oszlop++)
                 {
-                    Button b = new Button();
+                    SzinezõdõGomb b = new SzinezõdõGomb();
                     b.Height = méret;
                     b.Width = méret;
                     b.Left = sor*méret;
