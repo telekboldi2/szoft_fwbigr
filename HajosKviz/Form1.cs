@@ -23,6 +23,26 @@ namespace HajosKviz
                 ÖsszesKérdés.RemoveAt(0);
             }
             dataGridView1.DataSource = AktuálisKérdések;
+
+            KérdésMegjelenítés(AktuálisKérdések[AktuálisKérdés]);
+        }
+
+        void KérdésMegjelenítés(Kérdés kérdés)
+        {
+            label1.Text = kérdés.KérdésSzöveg;
+            válaszGomb1.Text = kérdés.Válasz1;
+            válaszGomb2.Text = kérdés.Válasz2;
+            válaszGomb3.Text = kérdés.Válasz3;
+
+            if (string.IsNullOrEmpty(kérdés.URL))
+            {
+                pictureBox1.Visible = false;
+            }
+            else
+            {
+                pictureBox1.Visible = true;
+                pictureBox1.Load("https://storage.altinum.hu/hajo/" + kérdés.URL);
+            }
         }
 
         List<Kérdés> KérdésBetöltés()
