@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             timer1 = new System.Windows.Forms.Timer(components);
+            almatimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // timer1
@@ -37,6 +38,12 @@
             timer1.Enabled = true;
             timer1.Interval = 300;
             timer1.Tick += timer1_Tick;
+            // 
+            // almatimer
+            // 
+            almatimer.Enabled = true;
+            almatimer.Interval = 1500;
+            almatimer.Tick += almatimer_Tick;
             // 
             // Form1
             // 
@@ -53,5 +60,6 @@
         #endregion
 
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer almatimer;
     }
 }

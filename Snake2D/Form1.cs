@@ -7,10 +7,14 @@ namespace Snake2D
         int irány_x = 0;
         int irány_y = 1;
         int lépésszám = 0;
-        int hossz = 10;
+        int hossz = 1;
+        
+
+        List<KígyóElem> kígyó = new List<KígyóElem>();
 
         public Form1()
         {
+            
             InitializeComponent();
         }
 
@@ -28,34 +32,54 @@ namespace Snake2D
             fej_x += irány_x * KígyóElem.Méret;
             fej_y += irány_y * KígyóElem.Méret;
 
-            foreach (KígyóElem item in Controls)
+
+            //Ütközésvizsgálat
+            foreach (object item in Controls)
             {
-                if (item.Top == fej_y && item.Left == fej_x)
+
+                if (item is KígyóElem) //Azért kell hogy csak akkor vizsgáljon ütközést, ha az item az Kígyóelem 
                 {
-                    timer1.Enabled = false;
-                    return;
+                    KígyóElem k = (KígyóElem)item;
+                    if (k.Top == fej_y && k.Left == fej_x)
+                    {
+                        timer1.Enabled = false;
+                        return;
+                    }
+                }
+                if (item is Alma)
+                {
+                    Alma a = (Alma)item;
+                    if (a.Top == fej_y && a.Left == fej_x)
+                    {
+                        Controls.Remove(a);
+                        hossz++;
+                    }
                 }
             }
 
-            if (Controls.Count > hossz)
+
+            //Levágás
+            if (kígyó.Count > hossz)
             {
-                Controls.RemoveAt(0);
+                KígyóElem levágandó = kígyó[0];
+                kígyó.RemoveAt(0);
+                Controls.Remove(levágandó);
             }
 
             KígyóElem ke = new();
             ke.Top = fej_y;
             ke.Left = fej_x;
+            kígyó.Add(ke);
             Controls.Add(ke);
-
-            
-
         }
+
+
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Down) 
+            if (e.KeyCode == Keys.Down)
             {
-                irány_x= 0;
+                irány_x = 0;
                 irány_y = 1;
             }
 
@@ -75,6 +99,18 @@ namespace Snake2D
             {
                 irány_x = -1;
                 irány_y = 0;
+            }
+        }
+
+        private void almatimer_Tick(object sender, EventArgs e)
+        {
+            if (timer1.Enabled)
+            {
+                Random rnd = new Random();
+                Alma a = new Alma();
+                a.Top = rnd.Next(0, 30) * KígyóElem.Méret;
+                a.Left = rnd.Next(0, 50) * KígyóElem.Méret;
+                Controls.Add(a);
             }
         }
     }
