@@ -8,11 +8,10 @@ namespace zh2gyak
 {
     public class lekepezes
     {
-        double VersenyzoID { get; set; }
-        string Nev { get; set; } = string.Empty;
-        string Nemzetiseg { get; set; } = string.Empty;
-
-        double EredmenyPerc {  get; set; }
-        string Kategoria { get; set; } = string.Empty;
+        public double VersenyzoID { get; set; }
+        public string Nev { get; set; }
+        public string Nemzetiseg { get; set; }
+        public double EredmenyPerc {  get; set; }
+        public string Kategoria { get; set; }
     }
 }
