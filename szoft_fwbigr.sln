@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HajosKviz", "HajosKviz\Hajo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snake2D", "Snake2D\Snake2D.csproj", "{47D368EF-B10D-42CF-AF16-6FA4D9DE1578}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zh2gyak", "zh2gyak\zh2gyak.csproj", "{238E783E-A31F-4594-9B54-524DD7AA30AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zh2gyak", "zh2gyak\zh2gyak.csproj", "{238E783E-A31F-4594-9B54-524DD7AA30AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szofteng", "Szofteng\Szofteng.csproj", "{C864FEAF-7ACD-4824-8C9A-7A71AF25787A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{238E783E-A31F-4594-9B54-524DD7AA30AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{238E783E-A31F-4594-9B54-524DD7AA30AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{238E783E-A31F-4594-9B54-524DD7AA30AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C864FEAF-7ACD-4824-8C9A-7A71AF25787A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C864FEAF-7ACD-4824-8C9A-7A71AF25787A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C864FEAF-7ACD-4824-8C9A-7A71AF25787A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C864FEAF-7ACD-4824-8C9A-7A71AF25787A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
